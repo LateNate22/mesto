@@ -1,0 +1,9 @@
+.content__title {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-left: 21px;
+    padding-right: 15px; */
+    width: 246px;
+}

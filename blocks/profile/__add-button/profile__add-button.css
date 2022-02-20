@@ -1,0 +1,14 @@
+.profile__add-button {
+    background-image: url(../../../images/PlusVector.svg);
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 282px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    padding: 0;
+    /* color: inherit; */
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 36px;
+}

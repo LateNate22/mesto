@@ -1,0 +1,11 @@
+.content__card-like {
+    background-image: url(../../../images/LikeVector.svg);
+    height: 19px;
+    width: 22px;
+    border: none;
+    cursor: pointer;
+    /* margin-left: 70px; */
+    padding: 0;
+    /* color: inherit; */
+    background-color: transparent;
+}
