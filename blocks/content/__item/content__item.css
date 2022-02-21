@@ -1,9 +1,7 @@
 .content__item {
     background-color: rgba(251, 251, 251, 1);
     border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.content__item:last-of-type {
-    margin-bottom: 0;
+    margin: 0 auto;
+    height: 361px;
+    max-width: 282px;
 }

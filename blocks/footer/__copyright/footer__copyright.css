@@ -8,3 +8,17 @@
     margin-left: 19px;
     margin-bottom: 36px;
 }
+
+@media screen and (min-width: 600px) {
+    .footer__copyright {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .footer__copyright {
+        margin-top: 67px;
+        margin-bottom: 60px;
+        margin-left: 200px;
+    }
+}

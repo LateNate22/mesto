@@ -1,0 +1,9 @@
+.profile__items {
+    justify-self: start;
+}
+
+@media screen and (min-width: 768px) {
+   .profile__items {
+    margin-right: auto;
+   }
+}

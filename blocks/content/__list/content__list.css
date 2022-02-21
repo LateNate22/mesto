@@ -2,7 +2,33 @@
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 20px;
     width: calc(100% - 19px*2);
     margin: 0 auto;
     padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+    .content__list {
+        grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+        column-gap: 17px;
+        row-gap: 20px;
+        width: calc(100% - 50px*2);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .content__list {
+        grid-template-columns: repeat(3, minmax(282px, 1fr));
+        column-gap: 17px;
+        row-gap: 20px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .content__list {
+        grid-template-columns: repeat(3, minmax(282px, 1fr));
+        column-gap: 17px;
+        row-gap: 20px;
+        width: calc(100% - 200px*2);
+    }
 }

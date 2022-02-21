@@ -4,8 +4,12 @@
     width: 22px;
     border: none;
     cursor: pointer;
-    /* margin-left: 70px; */
     padding: 0;
-    /* color: inherit; */
     background-color: transparent;
+    transition: opacity 0.5s ease;
+}
+
+.content__card-like:hover {
+    opacity: 0.33;
+    transition: opacity 0.5s ease;
 }

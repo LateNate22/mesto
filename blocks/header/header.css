@@ -1,4 +1,23 @@
 .header {
     min-height: 84px;
     border-bottom: 1px solid rgba(84, 84, 84, 1);
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 500px) {
+    .header {
+        width: calc(100% - 50px*2);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        /* width: calc(100% - 100px*2); */
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .header {
+        width: calc(100% - 200px*2);
+    }
 }
