@@ -1,7 +1,7 @@
 let openPopup = document.querySelector('.profile__edit-button');
 let closePopup = document.querySelector('.popup__close-button');
 let popup = document.querySelector('.popup');
-let like = document.querySelectorAll('.content__card-like');
+let likes = document.querySelectorAll('.content__card-like');
 let formElement = document.querySelector('.popup__container');
 let nameInput =  document.querySelector('.popup__name');
 let activityInput = document.querySelector('.popup__activity');
@@ -31,27 +31,8 @@ function formSubmitHandler (evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 
 
-// Я НЕ ПОНИМАЮ КАК ЗАСТАВИТЬ ЛАЙКИ РАБОТАТЬ!!!
-// like.forEach(function likeActive(element) => {
-
-// };
-
-
-// document.querySelectorAll('.content__card-like').forEach(function(element) {
-    
-// });
-
-
-// function likeActive() {
-//     like.classList.toggle('content__card-like_active');
-//     like.classList.toggle('content__card-like');
-// }
-// like.addEventListener('click', likeActive);
-
-
-// like.forEach(like => like.addEventListener('click', likeActive {
-//     function likeActive() {
-//         like.classList.toggle('content__card-like_active');
-//         like.classList.toggle('content__card-like');
-//     }
-// })
+likes.forEach((like) => {
+    like.addEventListener('click', () => {
+        like.classList.toggle('content__card-like_active');
+    });
+});

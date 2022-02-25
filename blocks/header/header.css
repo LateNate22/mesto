@@ -10,11 +10,11 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+ /* @media screen and (min-width: 1024px) {
     .header {
-        /* width: calc(100% - 100px*2); */
+        width: calc(100% - 100px*2);
     }
-}
+}  */
 
 @media screen and (min-width: 1280px) {
     .header {
