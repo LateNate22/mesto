@@ -10,6 +10,6 @@
 }
 
 .content__card-like:hover {
-    opacity: 0.33;
+    opacity: 0.5;
     transition: opacity 0.5s ease;
 }

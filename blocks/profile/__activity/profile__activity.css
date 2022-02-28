@@ -1,9 +1,9 @@
 .profile__activity {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Arial', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
-    margin: 14px auto 36px;
+    margin: 14px auto 32px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -11,16 +11,17 @@
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-    .profile__activity{
-       text-align: left;
-    }
-}
-
 @media screen and (min-width: 500px) {
     .profile__activity{
         font-size: 18px;
         line-height: 21.78px;
         max-width: 336px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .profile__activity{
+       text-align: left;
+       margin: 5px auto 0;
     }
 }
