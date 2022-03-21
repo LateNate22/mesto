@@ -25,57 +25,16 @@
             </section>
             <section class="content">
                     <ul class="content__list">
-                        <li class="content__item">
-                                <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="content__image">
-                                <div class="content__title">
-                                    <h2 class="content__card-name">Карачаевск</h2>
-                                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
-                                </div>
-                        </li>
-                        <li class="content__item">
-                                <img src="./images/Elbrus.jpg" alt="Гора Эльбрус" class="content__image">
-                                <div class="content__title">
-                                    <h2 class="content__card-name">Гора Эльбрус</h2>
-                                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
-                                </div>
-                        </li>
-                        <li class="content__item">
-                                <img src="./images/Dombai.jpg" alt="Домбай" class="content__image">
-                                <div class="content__title">
-                                    <h2 class="content__card-name">Домбай</h2>
-                                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
-                                </div>
-                        </li>
-                        <li class="content__item">
-                                <img src="./images/Elbrus.jpg" alt="Гора Эльбрус" class="content__image">
-                                <div class="content__title">
-                                    <h2 class="content__card-name">Гора Эльбрус</h2>
-                                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
-                                </div>
-                        </li>
-                        <li class="content__item">
-                                <img src="./images/Dombai.jpg" alt="Домбай" class="content__image">
-                                <div class="content__title">
-                                    <h2 class="content__card-name">Домбай</h2>
-                                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
-                                </div>
-                        </li>
-                        <li class="content__item">
-                                <img src="./images/Karachaevsk.jpg" alt="Карачаевск" class="content__image">
-                                <div class="content__title">
-                                    <h2 class="content__card-name">Карачаевск</h2>
-                                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
-                                </div>
-                        </li>
+                        <!--сюда вставляется темплейт-->
                     </ul>
             </section>
         </main> 
         <footer class="footer">
                   <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
         </footer>
-        <div class="popup">
+        <div class="popup popup__profile-edit"> <!--редактор профиля-->
             <div class="popup__container">
-                <form class="popup__form" name="profileEditForm">
+                <form class="popup__form popup__form_profile-edit" name="profileEditForm">
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <input type="text" class="popup__input popup__input_input_name" name="profileName">
                     <input type="text" class="popup__input popup__input_input_activity" name="profileActivity">
@@ -84,6 +43,34 @@
                 </form>
             </div>
         </div>
+        <div class="popup popup__add-card"> <!--добавление карточки-->
+            <div class="popup__container">
+                <form class="popup__form popup__form-add-card" name="addCardForm">
+                    <h2 class="popup__title">Новое место</h2>
+                    <input type="text" class="popup__input popup__input_input_cardname" name="cardName" placeholder="Название">
+                    <input type="text" class="popup__input popup__input_input_imagelink" name="imageLink" placeholder="Ссылка на картинку">
+                    <button type="submit" class="popup__save-button" aria-label="кнопка сохранить">Сохранить</button>
+                    <button type="button" class="popup__close-button" aria-label="кнопка закрыть"></button>
+                </form>
+            </div>
+        </div>
+        <div class="popup popup__show-image"> <!--Показывает картинку-->
+            <div class="popup__image-container"> 
+                    <img srс="#" alt="#" class="popup__image"> 
+                    <h2 class="popup__image-title"></h2> 
+                    <button type="button" class="popup__close-button" aria-label="кнопка закрыть"></button> 
+            </div>
+        </div>
+        <template class="content__template">
+            <li class="content__item">
+                <img src="#" alt="#" class="content__image">
+                <button class="content__card-delete" type="submit" aria-label="кнопка удалить"></button>
+                <div class="content__title">
+                    <h2 class="content__card-name"></h2>
+                    <button class="content__card-like" type="button" aria-label="кнопка лайк"></button>
+                </div>
+            </li>
+        </template>
     </div>
 <script src="./scripts/script.js"></script>       
 </body>
