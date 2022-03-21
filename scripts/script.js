@@ -1,9 +1,9 @@
 const contentList = document.querySelector('.content__list');
 const cardTemplate = document.querySelector('.content__template');
 
-const editProfilePopup = document.querySelector('.popup__profile-edit'); //попап редактор профиля
-const addCardPopup = document.querySelector('.popup__add-card'); //попап добавить карточку
-const showImagePopup = document.querySelector('.popup__show-image'); //попап просмотр фото
+const editProfilePopup = document.querySelector('.popup-profile-edit'); //попап редактор профиля
+const addCardPopup = document.querySelector('.popup-add-card'); //попап добавить карточку
+const showImagePopup = document.querySelector('.popup-show-image'); //попап просмотр фото
 
 const openEditProfilePopup = document.querySelector('.profile__edit-button'); //кнопка ОТКРЫТЬ редактор профиля
 const closeEditProfilePopup = editProfilePopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ редактора профиля
