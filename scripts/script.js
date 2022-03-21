@@ -30,36 +30,14 @@ const popupImage = document.querySelector('.popup__image');
 const popupImageTitle = document.querySelector('.popup__image-title');
 
 
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    },
-  ];
-  
- //открывает и закрывает попап
- function togglePopup(popup) {
-  popup.classList.toggle('popup_opened');
+//открывает попап
+function openPopup (popup) {
+  popup.classList.add('popup_opened');
+}
+
+//закрывает попап
+function closePopup (popup) {
+  popup.classList.remove('popup_opened');
 }
 
 
@@ -69,7 +47,13 @@ function editProfile(evt) {
 
   profileName.textContent = nameInput.value;
   profileActivity.textContent = activityInput.value;
-  togglePopup(editProfilePopup);
+  closePopup(editProfilePopup);
+};
+
+//заполняет инпуты профиля дефолтным значением
+function fillInput() {
+  nameInput.value = profileName.textContent; 
+  activityInput.value = profileActivity.textContent;
 };
 
 
@@ -80,7 +64,6 @@ function addLike(card) {
       evt.target.classList.toggle('content__card-like_active');
   });
 };
-
 
 //удаление
 function deleteCard(card) {
@@ -94,19 +77,17 @@ function deleteCard(card) {
 //Открытие фотографии на весь экран
 function showPhoto(photo) {
   photo.addEventListener('click', function() {
-    togglePopup(showImagePopup);
+    openPopup(showImagePopup);
 
     popupImage.alt = photo.alt;
     popupImage.src = photo.src;
     popupImageTitle.textContent = photo.alt;
-
-    console.log(photo);
 });
 };
 
 
 //создает карточки из масива
-function createInitialCards(oneCard) {
+function createCard(oneCard) {
   const card = cardTemplate.content.querySelector('.content__item').cloneNode(true);
   const cardTitle = card.querySelector('.content__card-name');
   const cardImage = card.querySelector('.content__image');
@@ -129,7 +110,7 @@ function addNewCards(card) {
 
 //обрабатывает элементы массива
 initialCards.forEach((card) => {
-  addNewCards(createInitialCards(card));
+  addNewCards(createCard(card));
 });
 
 
@@ -137,13 +118,12 @@ initialCards.forEach((card) => {
 function addCardFromForm(evt) {
   evt.preventDefault();
 
-  const cardFromForm = createInitialCards({ name: cardNameInput.value, link: cardLinkInput.value });
+  const cardFromForm = createCard({ name: cardNameInput.value, link: cardLinkInput.value });
  
   contentList.prepend(cardFromForm);
-  togglePopup(addCardPopup);
+  closePopup(addCardPopup);
   
-  cardNameInput.value = '';
-  cardLinkInput.value = '';
+  addCardFormElement.reset();
 };
 
 
@@ -154,24 +134,22 @@ profileFormElement.addEventListener('submit', editProfile); //редактор �
 addCardFormElement.addEventListener('submit', addCardFromForm); //добавление карточки
 
 openEditProfilePopup.addEventListener('click', function () { //ОТКРЫТЬ редактор профиля, заполнив инпуты дефолтными значениями
-    nameInput.value = profileName.textContent; 
-    activityInput.value = profileActivity.textContent;
-
-    togglePopup(editProfilePopup)
+  fillInput();
+  openPopup(editProfilePopup);
 }); 
 
 openAddCardPopup.addEventListener('click', function () { //ОТКРЫТЬ форму добавить карточку
-    togglePopup(addCardPopup);
+  openPopup(addCardPopup);
 });
 
 closeEditProfilePopup.addEventListener('click', function () { //ЗАКРЫТЬ редактор профиля
-    togglePopup(editProfilePopup)
+  closePopup(editProfilePopup)
 });
 
 closeAddCardPopup.addEventListener('click', function () { //ЗАКРЫТЬ форму добавить карточку
-    togglePopup(addCardPopup)
+  closePopup(addCardPopup)
 });
 
 closeShowImagePopup.addEventListener('click', function () { //ЗАКРЫТЬ просмотр фото
-  togglePopup(showImagePopup)
+  closePopup(showImagePopup)
 });
