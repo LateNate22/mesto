@@ -29,7 +29,7 @@ const cardLinkInput = document.querySelector('.popup__input_input_imagelink');
 const popupImage = document.querySelector('.popup__image');
 const popupImageTitle = document.querySelector('.popup__image-title');
 
-const EscButton = "Escape";
+const ESC_KEY = "Escape";
 
 //выключает кнопку
 function disableSubmitButton(form) {
@@ -55,7 +55,7 @@ function closePopup (popup) {
 
 //закрывает попап через esc
 function closeByEsc(evt) {
-  if (evt.key === EscButton) {
+  if (evt.key === ESC_KEY) {
     const popupOpen = document.querySelector('.popup_opened');
     closePopup(popupOpen);
   }
