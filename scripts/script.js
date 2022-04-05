@@ -5,13 +5,13 @@ const editProfilePopup = document.querySelector('.popup-profile-edit'); //поп
 const addCardPopup = document.querySelector('.popup-add-card'); //попап добавить карточку
 const showImagePopup = document.querySelector('.popup-show-image'); //попап просмотр фото
 
-const openEditProfilePopup = document.querySelector('.profile__edit-button'); //кнопка ОТКРЫТЬ редактор профиля
-const closeEditProfilePopup = editProfilePopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ редактора профиля
+const openEditProfilePopupButton = document.querySelector('.profile__edit-button'); //кнопка ОТКРЫТЬ редактор профиля
+const closeEditProfilePopupButton = editProfilePopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ редактора профиля
 
-const openAddCardPopup = document.querySelector('.profile__add-button'); //кнопка ОТКРЫТЬ добавить карточку
-const closeAddCardPopup = addCardPopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ добавить карточку
+const openAddCardPopupButton = document.querySelector('.profile__add-button'); //кнопка ОТКРЫТЬ добавить карточку
+const closeAddCardPopupButton = addCardPopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ добавить карточку
 
-const closeShowImagePopup = showImagePopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ просмотр фото
+const closeShowImagePopupButton = showImagePopup.querySelector('.popup__close-button'); //кнопка ЗАКРЫТЬ просмотр фото
 
 //форма редактор профиля
 const profileFormElement = document.querySelector('.popup__form_profile-edit');
@@ -29,42 +29,44 @@ const cardLinkInput = document.querySelector('.popup__input_input_imagelink');
 const popupImage = document.querySelector('.popup__image');
 const popupImageTitle = document.querySelector('.popup__image-title');
 
+const EscButton = "Escape";
+
 //выключает кнопку
 function disableSubmitButton(form) {
-  const submitForm = form.querySelector('.popup__save-button');
+  const submitFormButton = form.querySelector('.popup__save-button');
 
-  submitForm.classList.add('popup__save-button_inactive');
-  submitForm.setAttribute('disabled', 'disabled');
+  submitFormButton.classList.add('popup__save-button_inactive');
+  submitFormButton.setAttribute('disabled', 'disabled');
 }
 
 //открывает попап
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
+  document.addEventListener('click', closeByClick);
 }
 
 //закрывает попап
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEsc);
+  document.removeEventListener('click', closeByClick);
 }
 
-
 //закрывает попап через esc
-document.addEventListener('keydown', function(evt) {
-  if (evt.key === 'Escape') {
+function closeByEsc(evt) {
+  if (evt.key === EscButton) {
     const popupOpen = document.querySelector('.popup_opened');
     closePopup(popupOpen);
-    addCardFormElement.reset();
   }
-})
+}
 
 //закрывает попап по клику на overlay
-document.addEventListener('click', function (evt) {
+function closeByClick(evt) {
   if (evt.target.classList.contains('popup')) {
     closePopup(evt.target);
-    addCardFormElement.reset();
-  }
-});
-
+  };
+}
 
 //редактирует профиль
 function editProfile(evt) {
@@ -158,24 +160,24 @@ profileFormElement.addEventListener('submit', editProfile); //редактор �
 
 addCardFormElement.addEventListener('submit', addCardFromForm); //добавление карточки
 
-openEditProfilePopup.addEventListener('click', function () { //ОТКРЫТЬ редактор профиля, заполнив инпуты дефолтными значениями
+openEditProfilePopupButton.addEventListener('click', function () { //ОТКРЫТЬ редактор профиля, заполнив инпуты дефолтными значениями
   fillInput();
   openPopup(editProfilePopup);
 }); 
 
-openAddCardPopup.addEventListener('click', function () { //ОТКРЫТЬ форму добавить карточку
+openAddCardPopupButton.addEventListener('click', function () { //ОТКРЫТЬ форму добавить карточку
   openPopup(addCardPopup);
   disableSubmitButton(addCardFormElement);
 });
 
-closeEditProfilePopup.addEventListener('click', function () { //ЗАКРЫТЬ редактор профиля
+closeEditProfilePopupButton.addEventListener('click', function () { //ЗАКРЫТЬ редактор профиля
   closePopup(editProfilePopup)
 });
 
-closeAddCardPopup.addEventListener('click', function () { //ЗАКРЫТЬ форму добавить карточку
+closeAddCardPopupButton.addEventListener('click', function () { //ЗАКРЫТЬ форму добавить карточку
   closePopup(addCardPopup)
 });
 
-closeShowImagePopup.addEventListener('click', function () { //ЗАКРЫТЬ просмотр фото
+closeShowImagePopupButton.addEventListener('click', function () { //ЗАКРЫТЬ просмотр фото
   closePopup(showImagePopup)
 });
