@@ -1,4 +1,4 @@
-.popup__error-сontainer_active {
+.popup__errorplace_active {
     display: block;
     color: red;
     margin-left: 25px;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 600px) {
-    .popup__error-сontainer_active {
+    .popup__errorplace_active {
        margin-left: 34px;
     }   
 }

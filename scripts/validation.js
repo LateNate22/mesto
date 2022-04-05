@@ -3,7 +3,7 @@ obj = {
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__save-button',
   inactiveButtonClass: 'popup__save-button_inactive',
-  errorClass: 'popup__error-сontainer_active',
+  errorClass: 'popup__errorplace_active',
 }
 
 

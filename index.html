@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <title>6sprint</title>
+  <title>mesto</title>
 </head>
 <body class="page">
     <div class="page__container">
@@ -37,9 +37,9 @@
                 <form class="popup__form popup__form_profile-edit" name="profileEditForm" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <input type="text" class="popup__input popup__input_input_name" name="profileName" required minlength="2" maxlength="40">
-                    <span class="popup__error-сontainer" id="profileName-error"></span>
+                    <span class="popup__errorplace" id="profileName-error"></span>
                     <input type="text" class="popup__input popup__input_input_activity" name="profileActivity" required minlength="2" maxlength="200">
-                    <span class="popup__error-сontainer" id="profileActivity-error"></span>
+                    <span class="popup__errorplace" id="profileActivity-error"></span>
                     <button type="submit" class="popup__save-button popup__save-button_inactive popup__button" aria-label="кнопка сохранить" disabled>Сохранить</button>
                     <button type="button" class="popup__close-button" aria-label="кнопка закрыть"></button>
                 </form>
@@ -50,9 +50,9 @@
                 <form class="popup__form popup__form-add-card" name="addCardForm" novalidate>
                     <h2 class="popup__title">Новое место</h2>
                     <input type="text" class="popup__input popup__input_input_cardname" name="cardName" placeholder="Название" required minlength="2" maxlength="30">
-                    <span class="popup__error-сontainer" id="cardName-error"></span>
+                    <span class="popup__errorplace" id="cardName-error"></span>
                     <input type="url" class="popup__input popup__input_input_imagelink" name="imageLink" placeholder="Ссылка на картинку" pequired>
-                    <span class="popup__error-сontainer" id="imageLink-error"></span>
+                    <span class="popup__errorplace" id="imageLink-error"></span>
                     <button type="submit" class="popup__save-button popup__save-button_inactive popup__button" aria-label="кнопка сохранить" disabled>Сохранить</button>
                     <button type="button" class="popup__close-button" aria-label="кнопка закрыть"></button>
                 </form>
@@ -60,7 +60,7 @@
         </div>
         <div class="popup popup-show-image"> <!--Показывает картинку-->
             <div class="popup__image-container"> 
-                    <img srс="#" alt="#" class="popup__image"> 
+                    <img srс="#" alt="#" class="popup__image">
                     <h2 class="popup__image-title"></h2> 
                     <button type="button" class="popup__close-button" aria-label="кнопка закрыть"></button> 
             </div>
