@@ -29,6 +29,13 @@ const cardLinkInput = document.querySelector('.popup__input_input_imagelink');
 const popupImage = document.querySelector('.popup__image');
 const popupImageTitle = document.querySelector('.popup__image-title');
 
+//выключает кнопку
+function disableSubmitButton(form) {
+  const submitForm = form.querySelector('.popup__save-button');
+
+  submitForm.classList.add('popup__save-button_inactive');
+  submitForm.setAttribute('disabled', 'disabled');
+}
 
 //открывает попап
 function openPopup (popup) {
@@ -39,6 +46,24 @@ function openPopup (popup) {
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
 }
+
+
+//закрывает попап через esc
+document.addEventListener('keydown', function(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpen = document.querySelector('.popup_opened');
+    closePopup(popupOpen);
+    addCardFormElement.reset();
+  }
+})
+
+//закрывает попап по клику на overlay
+document.addEventListener('click', function (evt) {
+  if (evt.target.classList.contains('popup')) {
+    closePopup(evt.target);
+    addCardFormElement.reset();
+  }
+});
 
 
 //редактирует профиль
@@ -140,6 +165,7 @@ openEditProfilePopup.addEventListener('click', function () { //ОТКРЫТЬ р
 
 openAddCardPopup.addEventListener('click', function () { //ОТКРЫТЬ форму добавить карточку
   openPopup(addCardPopup);
+  disableSubmitButton(addCardFormElement);
 });
 
 closeEditProfilePopup.addEventListener('click', function () { //ЗАКРЫТЬ редактор профиля
